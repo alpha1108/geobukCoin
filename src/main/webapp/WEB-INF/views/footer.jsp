@@ -4,7 +4,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark" style="background-color:darkorange !important">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Almond Page, the no.1 media platform</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Geobuk Page, the no.1 media platform</p>
     </div>
     <!-- /.container -->
   </footer>

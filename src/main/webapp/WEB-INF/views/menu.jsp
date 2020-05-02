@@ -1,38 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    
-<ul class="sidebar navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <h6 class="dropdown-header">Login Screens:</h6>
-            <a class="dropdown-item" href="login">Login</a>
-            <a class="dropdown-item" href="register">Register</a>
-            <a class="dropdown-item" href="forgot-password">Forgot Password</a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Other Pages:</h6>
-            <a class="dropdown-item" href="404">404 Page</a>
-            <a class="dropdown-item" href="blank">Blank Page</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="charts">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="tables">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-        </li>
-      </ul>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+  <!-- Left side column. contains the logo and sidebar -->
+ 
+<input type="button" id="btn_add" onclick="action_add()" value="종목 추가"/>
+
+<ul class="menu">
+
+	<li><a href="${pageContext.request.contextPath}/board/fiveboard">5일이하 떡상한 종목</a></li>
+	<li><a href="${pageContext.request.contextPath}/board/tenboard">10일이하 떡상한 종목</a></li>
+	<li><a href="${pageContext.request.contextPath}/board/fifteenboard">15일이하 떡상한 종목</a></li>
+	<li><a href="${pageContext.request.contextPath}/board/twentyboard">20일이하 떡상한 종목</a></li>
+	<li><a href="${pageContext.request.contextPath}/board/twentyfiveboard">25일이하 떡상한 종목</a></li>
+	<li><a href="${pageContext.request.contextPath}/board/thirtyboard">30일이하 떡상한 종목</a></li>
+
+</ul>
+
+<input type="button" id="btn_add1" onclick="action_add1()" value="나의 일지 등록"/>
+
+<ul class="menu">
+
+	<li><a href="${pageContext.request.contextPath}/board/history">나의 일지</a></li>
+
+</ul>
+
+<script>
+	function action_add(){
+		location.href="${pageContext.request.contextPath}/board/event";
+	}
+	
+	
+	function action_add1(){
+		location.href="${pageContext.request.contextPath}/board/history";
+	}
+	
+</script>

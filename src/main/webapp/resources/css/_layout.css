@@ -1,0 +1,39 @@
+    body {margin:0;}
+   
+    .wrapper {
+     min-height: calc(100vh - 20px);
+    }
+	div#menu {
+		float:left;
+		width:17%;
+		min-height:400px;
+	}
+	div#content {
+		float:left;
+		width:78%;
+		padding:5px;
+	}
+	ul.menu li {
+		margin-bottom:15px;
+	}
+	/*
+	ul.menu {
+		list-style:none;
+	}
+	*/
+	input#btn_add {
+	margin-left: 25%;
+    border-inline-end-style: inherit;
+    border-inline-end: unset;
+    margin-bottom: 20px;
+	}
+	
+	input#btn_add1 {
+	margin-top: 20px;
+	margin-left: 20%;
+    border-inline-end-style: inherit;
+    border-inline-end: unset;
+    margin-bottom: 20px;
+	}
+
+    footer{height: 20px;}

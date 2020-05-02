@@ -22,4 +22,8 @@ public class HomeController {
 		return ".layout";
 	}
 	
+	@RequestMapping("/board/fiveboard")
+	public String fiveboard(Locale locale, Model model) {
+		return ".board.fiveboard";
+	}
 }

@@ -12,18 +12,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<style style="text/css">
-    body {margin:0;}
-   
-    .wrapper {
-     min-height: calc(100vh - 20px);
-    }
-
-    footer{height: 20px;}
-</style>
-
-
 <title>layout.jsp</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/_layout.css">
+
 <!-- Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -38,8 +29,8 @@
 
 
 </head>
-<body>
-<div id="wrap" class="wrapper">
+
+<div id="wrapper" class="wrapper">
    <div id="header" style="margin-bottom:45px;">
         <tiles:insertAttribute name="header"/>
    </div>
@@ -48,13 +39,16 @@
 		<tiles:insertAttribute name="menu"/>
 	</div>   
 
-	<div id="content" style="margin-top:45px;">
-        <tiles:insertAttribute name="content"/>
+	<div id="content" >
+ 		<tiles:insertAttribute name="content"/>
    </div>
 </div>
 
 <footer class="footer">
    <tiles:insertAttribute name="footer"/>
 </footer>
+
+
 </body>
+
 </html>
