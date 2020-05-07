@@ -149,6 +149,7 @@
 					var aa = parseInt(casplit[0].replace(regExp,""));
 					var bb = parseInt(casplit[1].replace(regExp,""));
 					var result = (bb / aa) * 100 - 100;
+					if()
 					$('.type11 tr:nth-child('+i+') > td:nth-child(5)').text(result.toFixed(2)+" %");
 				}
 			}
