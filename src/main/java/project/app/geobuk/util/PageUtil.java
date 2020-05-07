@@ -31,12 +31,6 @@ public class PageUtil {
 		if(totalPageCount<endPageNum){
 			endPageNum=totalPageCount;
 		}
-		System.out.println("startRow"+startRow);//시작
-		System.out.println("totalRowCount"+totalRowCount);//전체글의개수
-		System.out.println("totalPageCount"+totalPageCount);//페이지카운트
-		System.out.println("rowBlockCount"+rowBlockCount);
-		System.out.println("startPageNum"+startPageNum);
-		System.out.println("endPageNum"+endPageNum);
 	}
 	public int getPageNum() {
 		return pageNum;

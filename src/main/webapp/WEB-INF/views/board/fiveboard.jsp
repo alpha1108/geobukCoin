@@ -78,7 +78,7 @@
 					</c:forEach>
 					
 					<c:choose>
-						<c:when test="${pu.endPageNum<10 }">
+						<c:when test="${pu.endPageNum < pu.totalPageCount }">
 							<a href="${pageContext.request.contextPath}/board/fiveboard?pageNum=${pu.endPageNum+1}">[다음]</a>
 						</c:when>
 						<c:otherwise>
@@ -129,31 +129,39 @@
 	
 	// 상승률 구하기 오전11시부터 오후 5시까지 함
 	$(function(){
-		
 			var td = $('.type11 td:nth-child(5)').text();
-			console.log("td:"+td);
-		
+			
 			for(var i=2; i < td.length; i++){
 				var a = $('.type11 tr:nth-child('+i+') > td:nth-child(5)').text();
+				var b = $('.type11 tr:nth-child('+i+') > td:nth-child(5)')
 				var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
 				var casplit = a.split('/');
-				console.log("casplit:"+casplit);
 				if(a.indexOf(".") != -1){
 					var num = Number((casplit[0]*100)/100);
 					var num1 = Number((casplit[1]*100)/100);
-					var result1 = num + num1;
-					console.log("num:"+num);
-					console.log("num1:"+num1);
-					$('.type11 tr:nth-child('+i+') > td:nth-child(5)').text(result1);
+					var result1 = (num1 / num) * 100 - 100;
+					$('.type11 tr:nth-child('+i+') > td:nth-child(5)').text(result1.toFixed(2)+" %");
+					if(result1.toFixed(2) > 50){
+						$('.type11 tr:nth-child('+i+') > td:nth-child(5)').css("color","red");
+						$('.type11 tr:nth-child('+i+') > td:nth-child(5)').css("font-size","large");
+					}else if(result1.toFixed(2) > 10){
+						$('.type11 tr:nth-child('+i+') > td:nth-child(5)').css("color","blue");
+						$('.type11 tr:nth-child('+i+') > td:nth-child(5)').css("font-size","large");
+					}
 				}else{
 					var aa = parseInt(casplit[0].replace(regExp,""));
 					var bb = parseInt(casplit[1].replace(regExp,""));
 					var result = (bb / aa) * 100 - 100;
-					if()
 					$('.type11 tr:nth-child('+i+') > td:nth-child(5)').text(result.toFixed(2)+" %");
-				}
+					if(result.toFixed(2) > 50){
+						$('.type11 tr:nth-child('+i+') > td:nth-child(5)').css("color","red");
+						$('.type11 tr:nth-child('+i+') > td:nth-child(5)').css("font-size","large");
+					}else if(result1.toFixed(2) > 10){
+						$('.type11 tr:nth-child('+i+') > td:nth-child(5)').css("color","blue");
+						$('.type11 tr:nth-child('+i+') > td:nth-child(5)').css("font-size","large");
+					}
+				}		
 			}
-			
 	});
 	
 	function regExp_test(){

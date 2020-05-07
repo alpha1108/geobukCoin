@@ -27,12 +27,6 @@ public class BoardController {
 		PageUtil pu=new PageUtil(pageNum, totalRowCount,10,10);
 		int startRow=pu.getStartRow();
 		int endRow=pu.getEndRow();	
-		System.out.println("totalRowCount"+totalRowCount);
-		System.out.println("pageNum"+pageNum);
-		System.out.println("startRow"+startRow);
-		System.out.println("endRow"+endRow);
-		System.out.println("");
-		
 		map.put("startRow",startRow);
 		map.put("endRow",endRow);
 		List<EventVo> mlist = bs.list(map);
