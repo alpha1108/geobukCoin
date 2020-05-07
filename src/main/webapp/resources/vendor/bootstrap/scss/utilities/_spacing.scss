@@ -1,6 +1,6 @@
 // stylelint-disable declaration-no-important
 
-// Margin and Padding
+// Margin and Padding 4
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
@@ -11,7 +11,6 @@
         .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
         .#{$abbrev}t#{$infix}-#{$size},
         .#{$abbrev}y#{$infix}-#{$size} {
-          #{$prop}-top: $length !important;
         }
         .#{$abbrev}r#{$infix}-#{$size},
         .#{$abbrev}x#{$infix}-#{$size} {

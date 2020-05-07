@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="project.mybatis.mapper.EventMapper">
+
+		<sql id="search">
+			<if test="field!=null and field!=''">
+				where ${field} like '%'||#{keyword}||'%'			
+			</if>
+		</sql>
+  
+  		<insert id="insert" parameterType="project.app.geobuk.vo.EventVo">
+  			insert into geowrite values
+  			(
+  				eventnum_seq.nextval, 
+  				#{event}, 
+  				#{minprice}, 
+  				#{maxprice}, 
+  				#{ricecakeup}, 
+  				#{ricecakedown}, 
+  				#{notepad}, 
+  				sysdate,
+  				DEFAULT
+  			)   
+  		</insert>
+  		
+  		<select id="list" parameterType="hashmap" resultType="project.app.geobuk.vo.EventVo">
+			select * from
+			(
+				select aa.*,rownum rnum from	
+				(
+					select * from geowrite  
+					<![CDATA[ where ricecakedown  >= to_char(sysdate -5,'yyyy-mm-dd')]]> and status='Y'
+					order by ricecakedown asc
+				)aa
+			)
+			<![CDATA[ where rnum>=#{startRow} and rnum<=#{endRow}]]>
+			
+		</select>
+  		
+  		<select id="fiveinfo" parameterType="String" resultType="project.app.geobuk.vo.EventVo">
+  			select * from geowrite where <![CDATA[ ricecakedown  >= to_char(sysdate -5,'yyyy-mm-dd')  ]]> and status='Y' order by ricecakedown
+  		</select>
+  		
+  		<update id="update" parameterType="project.app.geobuk.vo.EventVo">
+  			update geowrite set status='N' where eventnum=#{eventnum}
+  		</update>
+  		
+  		<select id="count" resultType="int" parameterType="hashmap">
+			select NVL(count(*),0) cnt from geowrite
+		</select>
+		
+  		
+  </mapper>

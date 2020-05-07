@@ -1,7 +1,8 @@
     body {margin:0;}
    
     .wrapper {
-     min-height: calc(100vh - 20px);
+      	min-height: 1000px;
+      	background-color: #DEDEE0;
     }
 	div#menu {
 		float:left;
@@ -16,13 +17,14 @@
 	ul.menu li {
 		margin-bottom:15px;
 	}
-	/*
+	
 	ul.menu {
 		list-style:none;
 	}
-	*/
+	
+	
 	input#btn_add {
-	margin-left: 25%;
+	margin-left: 100px;
     border-inline-end-style: inherit;
     border-inline-end: unset;
     margin-bottom: 20px;
@@ -30,7 +32,22 @@
 	
 	input#btn_add1 {
 	margin-top: 20px;
-	margin-left: 20%;
+	margin-left: 100px;
+    border-inline-end-style: inherit;
+    border-inline-end: unset;
+    margin-bottom: 20px;
+	}
+	
+	input#btn_add2 {
+	margin-top: 20px;
+	margin-left: 100px;
+    border-inline-end-style: inherit;
+    border-inline-end: unset;
+    margin-bottom: 20px;
+	}
+	input#btn_add3 {
+	margin-top: 20px;
+	margin-left: 100px;
     border-inline-end-style: inherit;
     border-inline-end: unset;
     margin-bottom: 20px;

@@ -1,11 +1,7 @@
 package project.app.geobuk.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,9 +17,5 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		return ".layout";
 	}
-	
-	@RequestMapping("/board/fiveboard")
-	public String fiveboard(Locale locale, Model model) {
-		return ".board.fiveboard";
-	}
+
 }

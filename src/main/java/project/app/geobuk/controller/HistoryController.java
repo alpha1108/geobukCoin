@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HistoryController {
 
-	@RequestMapping(value="/board/history" , method=RequestMethod.GET)
+	@RequestMapping(value="/history/history" , method=RequestMethod.GET)
 	public String eventinsert(){
-		return ".board.history";
+		return ".history.history";
 	}
 }
